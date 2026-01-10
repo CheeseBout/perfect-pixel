@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import CheckoutButton from "../common/CheckoutButton";
 
 function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const list = [
     {
       question: "How is this different from lymphatic drops I saw on TikTok?",
@@ -10,7 +13,7 @@ function FAQ() {
       ],
     },
     {
-      question: " Why didn't my diet changes work?",
+      question: "Why didn't my diet changes work?",
       answer: [
         "Your diet only addressed what goes INTO your system (inflammation from food). It didn't fix your body's broken ability to drain what's already there. That's why you could eat perfectly clean and still wake up bloated—the backed-up lymphatic waste was still pooling in your tissues.",
       ],
@@ -58,25 +61,81 @@ function FAQ() {
       ],
     },
     {
-      question: " Is this vegan/gluten-free?",
+      question: "Is this vegan/gluten-free?",
       answer: [
         "Yes. 100% vegan, gluten-free, sugar-free, no artificial ingredients",
       ],
     },
   ];
 
+  const toggleItem = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <div>
-      <h2>Frequently Asked Questions</h2>
-      <div>
-        {list.map((item, index) => (
-          <div key={index}>
-            <p>{item.question}</p>
-            {item.answer.map((ans, idx) => (
-              <p key={idx}>{ans}</p>
-            ))}
-          </div>
-        ))}
+    <div className="py-16 px-6">
+      <div className="lg:w-[65%] mx-auto">
+        <h2 className="font-[Lora] text-[32px] md:text-[36px] text-center text-[#111111] mb-12 md:mb-14">
+          Frequently Asked Questions
+        </h2>
+        <div
+          className="space-y-0 bg-linear-to-b from-white to-[#F4EFE6] rounded-2xl
+          lg:px-8
+        "
+        >
+          {list.map((item, index) => (
+            <div
+              key={index}
+              className="border-b border-[#E5E5E5] last:border-b-0 font-[Nunito]"
+            >
+              <button
+                onClick={() => toggleItem(index)}
+                className="w-full py-5 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
+                aria-expanded={openIndex === index}
+              >
+                <p
+                  className="text-[#111111] font-normal 
+                pr-4
+                text-[16px] md:text-[18px] 
+                "
+                >
+                  {item.question}
+                </p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className={`w-4 h-4 shrink-0 transition-transform duration-500 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                  fill="currentColor"
+                >
+                  <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  openIndex === index
+                    ? "max-h-[1000px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="pb-5 pt-2 space-y-4">
+                  {item.answer.map((ans, idx) => (
+                    <p
+                      key={idx}
+                      className="text-[14px] md:text-[16px] text-[#333333] leading-relaxed"
+                    >
+                      {ans}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-6">
+        <CheckoutButton />
       </div>
     </div>
   );
