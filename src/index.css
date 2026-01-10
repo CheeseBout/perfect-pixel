@@ -2,7 +2,8 @@
 
 :root {
   font-family: montserrat, sans-serif;
-  
+  --page-width: 1240px;
+  --color-bg: #F4EFE6;
 } 
 
 /*

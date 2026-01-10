@@ -10,7 +10,7 @@ function ProductImages() {
         <img
           src="images/product/product-main.webp"
           alt="product-main"
-          className="w-[588px] h-[588px]"
+          className="w-[588px] h-[588px] mx-auto"
         />
       </div>
       <div>

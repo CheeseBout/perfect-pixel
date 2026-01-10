@@ -8,7 +8,7 @@ function ProductFeatures() {
         "https://trysculptique.com/cdn/shop/files/population_12285628_1_e864791e-7a6d-4f08-9aea-3aeffba37cc7.png?v=1758713413",
     },
     {
-      title: "Restores your body’s natural 24-hour lymphatic cycle",
+      title: "Restores your body's natural 24-hour lymphatic cycle",
       icons:
         "https://trysculptique.com/cdn/shop/files/blood_13858030_1.png?v=1752064910",
     },
@@ -36,15 +36,31 @@ function ProductFeatures() {
         "https://trysculptique.com/cdn/shop/files/ecology_18588873_1_dad420da-2490-4e30-828a-28b366974307.png?v=1758713413",
     },
   ];
+  
   return (
-    <div>
+    <div className="w-full max-w-[588px] mx-auto">
       {featureList.map((feature, index) => (
-        <div key={index}>
-          <div>
-            <img src={feature.icons} alt="" />
+        <div
+          key={index}
+          className="flex flex-row items-center min-h-[52.36px] mb-4"
+        >
+          {/* Icon - Fixed dimensions, no shrinking */}
+          <div className="w-[52.36px] h-[52.36px] shrink-0">
+            <img 
+              src={feature.icons} 
+              alt="" 
+              className="w-full h-full object-contain"
+            />
           </div>
-          <div>
-            <p>{feature.title}</p>
+          
+          {/* Gap between icon and text */}
+          <div className="w-6" />
+          
+          {/* Text - Flexible width */}
+          <div className="flex-1">
+            <p className="text-base leading-[1.5] text-[#1a202c]">
+              {feature.title}
+            </p>
           </div>
         </div>
       ))}
