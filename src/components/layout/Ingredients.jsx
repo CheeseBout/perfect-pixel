@@ -80,26 +80,27 @@ function Ingredients() {
 
   const toggleCard = (index) => {
     setOpenCards((prev) =>
-      prev.includes(index)
-        ? prev.filter((i) => i !== index)
-        : [...prev, index]
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
 
   return (
     <div className="lg:py-16 lg:px-4 font-[Nunito] bg-(--color-bg) w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <div className="max-w-[1240px] mx-auto">
-        <h2 className="font-[Lora] text-[28px] md:text-[36px] text-center text-black mb-6 leading-tight">
-          The 8-Ingredient System That Restores What Hormones Once Maintained
-        </h2>
-        <p className="text-[16px] md:text-[18px] text-center text-[#333333] mb-12 max-w-[900px] mx-auto leading-relaxed">
-          Sculptique is the only formula that addresses ALL 6 mechanisms of
-          lymphatic dysfunction simultaneously—not with symbolic doses, but with
-          therapeutic amounts based on clinical research. Not just moving fluid
-          temporarily. Not just reducing inflammation. Complete restoration.
-        </p>
+        <div className="lg:w-[800px] mx-auto">
+          <h2 className="font-[Lora] text-[28px] md:text-[36px] text-center text-black my-4 leading-tight">
+            <span className="text-[rgb(3,152,105)]">The 8-Ingredient System</span> That Restores What Hormones Once Maintained
+          </h2>
+          <p className="lg:text-[18px] text-center text-[#333333] my-4 max-w-[900px] mx-auto leading-relaxed">
+            Sculptique is the only formula that addresses ALL 6 mechanisms of
+            lymphatic dysfunction simultaneously—not with symbolic doses, but
+            with therapeutic amounts based on clinical research. Not just moving
+            fluid temporarily. Not just reducing inflammation. Complete
+            restoration.
+          </p>
+        </div>
 
-        <div className="border border-black rounded-[12px] overflow-hidden bg-black grid gap-[1px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-12 shadow-sm">
+        <div className="border-2 border-black rounded-[12px] overflow-hidden bg-black grid gap-[1px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 shadow-sm">
           {ingredientsList.map((ingredient, index) => (
             <div
               key={index}
@@ -132,7 +133,7 @@ function Ingredients() {
                   onClick={() => toggleCard(index)}
                   className="w-full flex items-center justify-between py-1 cursor-pointer group"
                 >
-                  <h5 className="text-[14px] md:text-[15px] font-bold text-black text-left pr-2">
+                  <h5 className="lg:text-[16px] font-bold text-black text-left pr-2">
                     {ingredient.amount}
                   </h5>
                   <svg
@@ -155,12 +156,8 @@ function Ingredients() {
                   }`}
                 >
                   <div className="text-left font-[Nunito] lg:text-[14px]">
-                    <p className="text-[#444444]">
-                      {ingredient.description}
-                    </p>
-                    <p className="text-[#666666]">
-                      {ingredient.study}
-                    </p>
+                    <p className="text-[#444444]">{ingredient.description}</p>
+                    <p className="text-[#666666]">{ingredient.study}</p>
                   </div>
                 </div>
               </div>
