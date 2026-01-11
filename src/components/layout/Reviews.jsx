@@ -78,20 +78,20 @@ function Reviews() {
   return (
     <div>
       {/* Review Section */}
-      <div className="bg-white py-16 px-6 md:px-[50px]">
+      <div className="bg-white py-16 px-6 md:px-12.5">
         <div className="max-w-(--page-width) mx-auto">
           {/* Trustpilot Widget */}
           <div className="flex justify-center">
             <img
               src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Trustpilot_Score.png?v=1752349211"
               alt="Trustpilot Score"
-              className="h-[20px] max-w-full"
+              className="h-5 max-w-full"
             />
           </div>
 
           <div className="flex flex-col justify-center items-center">
             {/* Main Headline */}
-            <h2 className="font-[Lora] text-center text-[#000000] md:my-4 md:text-[32px] md:max-w-[800px]">
+            <h2 className="font-[Lora] text-center text-[#000000] md:my-4 md:text-2xl md:max-w-200">
               Real Women, Real Results: 93,000+ Transformations
             </h2>
 
@@ -233,7 +233,7 @@ function Reviews() {
 
       {/* User's Reviews */}
       <div className="bg-white py-8 px-4">
-        <div className="max-w-[1240px] mx-auto">
+        <div className="max-w-310 mx-auto">
           {/* Sort Dropdown */}
           <div className="mb-8 flex">
             <select className="rounded md:py-2.5 md:pr-5 text-[14px] font-[Arial] text-[#FA8072] bg-white cursor-pointer focus:outline-none focus:border-[#F87171]">
@@ -307,7 +307,7 @@ function Reviews() {
                 </div>
 
                 {/* Row 3: Review Body */}
-                <p className="text-[16px] text-[#111827] font-[Nunito] leading-[1.5]">
+                <p className="text-[16px] text-[#111827] font-[Nunito] leading-normal">
                   {review.comment}
                 </p>
               </li>
@@ -341,7 +341,7 @@ function Reviews() {
 
       {/* Offers Section */}
       <div className="bg-[#F4EFE6] py-12 md:py-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <div className="max-w-[1240px] mx-auto px-6">
+        <div className="max-w-310 mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {offers.map((offer, index) => (
               <div
@@ -353,7 +353,7 @@ function Reviews() {
                   <img
                     src={offer.image}
                     alt={offer.name}
-                    className="w-[45px] h-[45px] object-contain"
+                    className="w-11 h-11 object-contain"
                     style={{
                       filter:
                         "invert(37%) sepia(93%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(101%)",

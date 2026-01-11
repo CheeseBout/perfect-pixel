@@ -53,7 +53,7 @@ function ExpertAdvice() {
           <img
             src="https://trysculptique.com/cdn/shop/files/greendeskt-min.png?v=1758713213"
             alt="expert"
-            className="w-[620px] h-[585px] object-cover"
+            className="w-155 h-146.25 object-cover"
           />
         </div>
       </div>

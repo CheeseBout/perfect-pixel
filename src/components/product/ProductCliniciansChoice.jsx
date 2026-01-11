@@ -2,7 +2,7 @@ import React from "react";
 
 function ProductCliniciansChoice() {
   return (
-    <div className="bg-white lg:pt-2 lg:pl-2 lg:pb-2.5 max-w-[400px]">
+    <div className="bg-white lg:pt-2 lg:pl-2 lg:pb-2.5 max-w-100">
       <div className="flex items-center gap-2 relative">
         {/* Left Element: Clinicians' Choice Badge */}
         <div className="shrink-0 relative">
@@ -23,7 +23,7 @@ function ProductCliniciansChoice() {
 
           {/* Center Text */}
           <div className="px-6 py-1">
-            <p className="font-[Lora] lg:text-[16px] text-center font-normal text-[#212121] leading-tight">
+            <p className="font-[Lora] lg:text-[16px] text-center font-semibold text-[#212121] leading-tight">
               Clinicians'
               <br />
               Choice
@@ -49,7 +49,7 @@ function ProductCliniciansChoice() {
         {/* Middle Element: Informational Text */}
         <div className="flex-1">
           {/* Line 1 & 2 */}
-          <p className="lg:text-[13px] text-[#1a1a1a] leading-[1.5] mb-2">
+          <p className="lg:text-[13px] text-[#1a1a1a] leading-normal mb-2">
             <span className="font-bold">336 clinicians</span>{" "}
             <span className="font-normal">share this on</span>{" "}
             <span className="italic">FrontrowMD</span>
@@ -66,17 +66,17 @@ function ProductCliniciansChoice() {
               <img
                 src="https://assets.app.thefrontrowhealth.com/jijjnma3wz2ktevmvpuoewdnubm0"
                 alt="Dr. Kimberly Rogers, MD"
-                className="w-[20px] h-[20px] rounded-full border-2 border-white object-cover"
+                className="w-5 h-5 rounded-full border-2 border-white object-cover"
               />
               <img
                 src="https://assets.app.thefrontrowhealth.com/yulyi33mil8glzv4b7fhzs5ipnz2"
                 alt="Deerbrook Family Clinic"
-                className="w-[20px] h-[20px] rounded-full border-2 border-white object-cover"
+                className="w-5 h-5 rounded-full border-2 border-white object-cover"
               />
               <img
                 src="https://assets.app.thefrontrowhealth.com/pa8nliuewz7t7g0dmxjawwf0kr5a"
                 alt="Dr. Green"
-                className="w-[20px] h-[20px] rounded-full border-2 border-white object-cover"
+                className="w-5 h-5 rounded-full border-2 border-white object-cover"
               />
             </div>
             <a href="#" className="font-[Nunito] text-[14px] text-[#1a1a1a] hover:underline font-bold">
@@ -86,7 +86,7 @@ function ProductCliniciansChoice() {
         </div>
 
         {/* Right Element: Close Button */}
-        <button className="absolute top-0 right-0 w-[20px] h-[20px] rounded-full bg-[#e0e0e0] flex items-center justify-center hover:bg-[#d0d0d0] transition-colors">
+        <button className="absolute top-0 right-0 w-5 h-5 rounded-full bg-[#e0e0e0] flex items-center justify-center hover:bg-[#d0d0d0] transition-colors">
           <span className="text-[#666666] text-[16px] leading-none">×</span>
         </button>
       </div>

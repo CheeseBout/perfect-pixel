@@ -86,12 +86,12 @@ function Ingredients() {
 
   return (
     <div className="lg:py-16 lg:px-4 font-[Nunito] bg-(--color-bg) w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <div className="max-w-[1240px] mx-auto">
-        <div className="lg:w-[800px] mx-auto">
+      <div className="max-w-310 mx-auto">
+        <div className="lg:w-200 mx-auto">
           <h2 className="font-[Lora] text-[28px] md:text-[36px] text-center text-black my-4 leading-tight">
             <span className="text-[rgb(3,152,105)]">The 8-Ingredient System</span> That Restores What Hormones Once Maintained
           </h2>
-          <p className="lg:text-[18px] text-center text-[#333333] my-4 max-w-[900px] mx-auto leading-relaxed">
+          <p className="lg:text-[18px] text-center text-[#333333] my-4 max-w-225 mx-auto leading-relaxed">
             Sculptique is the only formula that addresses ALL 6 mechanisms of
             lymphatic dysfunction simultaneously—not with symbolic doses, but
             with therapeutic amounts based on clinical research. Not just moving
@@ -100,7 +100,7 @@ function Ingredients() {
           </p>
         </div>
 
-        <div className="border-2 border-black rounded-xl overflow-hidden bg-black grid gap-[1px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 shadow-sm">
+        <div className="border-2 border-black rounded-xl overflow-hidden bg-black grid gap-px grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 shadow-sm">
           {ingredientsList.map((ingredient, index) => (
             <div
               key={index}
@@ -119,11 +119,11 @@ function Ingredients() {
               </div>
 
               {/* Image Area */}
-              <div className="mb-6 h-[80px] flex items-center justify-center flex-shrink-0">
+              <div className="mb-6 h-20 flex items-center justify-center shrink-0">
                 <img
                   src={ingredient.image}
                   alt="ingredient"
-                  className="w-[70px] md:w-[80px] h-auto object-contain"
+                  className="w-17.5 md:w-20 h-auto object-contain"
                 />
               </div>
 
@@ -139,7 +139,7 @@ function Ingredients() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
-                    className={`w-3.5 h-3.5 flex-shrink-0 text-black transition-transform duration-300 ${
+                    className={`w-3.5 h-3.5 shrink-0 text-black transition-transform duration-300 ${
                       openCards.includes(index) ? "rotate-180" : ""
                     }`}
                     fill="currentColor"
@@ -151,7 +151,7 @@ function Ingredients() {
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openCards.includes(index)
-                      ? "max-h-[500px] opacity-100 mt-2"
+                      ? "max-h-125 opacity-100 mt-2"
                       : "max-h-0 opacity-0"
                   }`}
                 >

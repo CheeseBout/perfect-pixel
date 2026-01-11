@@ -164,7 +164,7 @@ function StoriesVideo() {
         {/* Controls: Indicator Bar and Navigation Buttons */}
         <div className="flex items-center justify-between mb-8">
           {/* Indicator Bar */}
-          <ul className="flex w-[1040px]">
+          <ul className="flex w-260">
             {Array.from({ length: totalSegments }).map((_, index) => (
               <li
                 key={index}
