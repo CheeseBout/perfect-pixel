@@ -10,7 +10,7 @@ function ProductImages() {
           <img
             src="images/product/product-main.webp"
             alt="product-main"
-            className="w-[588px] h-[588px] object-cover"
+            className="md:w-147 md:h-147 object-cover"
           />
         </div>
 

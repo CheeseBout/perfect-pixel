@@ -4,11 +4,8 @@ import CheckoutButton from "../common/CheckoutButton";
 function ExpertAdvice() {
   return (
     <div className="lg:w-[85%] lg:py-14 mx-auto">
-      <div className="flex bg-[rgba(230,230,230,0.9)]">
-        <div className="flex-1
-            lg:p-8
-            "
-        >
+      <div className="flex flex-col bg-[rgba(230,230,230,0.9)] lg:flex-row">
+        <div className="flex-1 order-2 lg:order-1 lg:p-8">
           <p
             className="font-[Nunito] text-[rgb(115,115,115)]
           lg:text-[16px]
@@ -49,11 +46,11 @@ function ExpertAdvice() {
           </p>
             <CheckoutButton />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 order-1 lg:order-2 mx-auto">
           <img
             src="https://trysculptique.com/cdn/shop/files/greendeskt-min.png?v=1758713213"
             alt="expert"
-            className="w-155 h-146.25 object-cover"
+            className="object-cover w-[290px] h-[240px] md:w-155 md:h-146.25"
           />
         </div>
       </div>

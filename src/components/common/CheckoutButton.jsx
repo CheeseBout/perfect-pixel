@@ -9,7 +9,7 @@ function CheckoutButton() {
       </button>
       
       {/* Guarantee Badge */}
-      <div className="flex items-center justify-center gap-2 mt-[16px]">
+      <div className="flex items-center justify-center gap-2 mt-4">
         <img 
           src="icons/money-back.webp" 
           alt="money-back guarantee badge" 

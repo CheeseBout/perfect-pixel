@@ -6,7 +6,7 @@ function Header() {
       <img
         src="./icons/page-title.avif"
         alt="page title"
-        className="md:w-[160px]"
+        className="md:w-40"
       />
     </div>
   );
