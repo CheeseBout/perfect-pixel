@@ -100,14 +100,14 @@ function Ingredients() {
           </p>
         </div>
 
-        <div className="border-2 border-black rounded-[12px] overflow-hidden bg-black grid gap-[1px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 shadow-sm">
+        <div className="border-2 border-black rounded-xl overflow-hidden bg-black grid gap-[1px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 shadow-sm">
           {ingredientsList.map((ingredient, index) => (
             <div
               key={index}
               className="bg-white p-5 flex flex-col items-center h-full transition-all duration-300"
             >
               {/* Top Indicator */}
-              <div className="flex items-center gap-1.5 mb-5 flex-shrink-0">
+              <div className="flex items-center gap-1.5 mb-5 shrink-0">
                 <img
                   src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/check-mark_17013456_2.png?v=1760698419"
                   alt="tick"
@@ -165,7 +165,7 @@ function Ingredients() {
           ))}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           <img
             src="images/ingredient.webp"
             alt="ingredients"
