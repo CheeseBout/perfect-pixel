@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="min-h-screen mx-auto">
       <Header />
-      <main className="py-[32px] w-[1340px] mx-auto">
+      <main className="py-8 w-[1340px] mx-auto">
         {/* Product Main Section */}
         <ProductDetail />
         

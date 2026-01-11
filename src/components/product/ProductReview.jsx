@@ -8,7 +8,7 @@ function ProductReview() {
         {/* Header Section */}
         <div className="flex items-start gap-4 mb-4">
           {/* Avatar */}
-          <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-16 h-16 rounded-full overflow-hidden shrink-0">
             <img
               src="https://trysculptique.com/cdn/shop/files/AI_Nurse_Holding_TORC_2_efcbd677-7242-4cb2-9f99-ad1e3726b19b.png?v=1752500889"
               alt="user"

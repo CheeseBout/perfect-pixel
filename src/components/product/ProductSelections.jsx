@@ -124,7 +124,7 @@ function ProductSelections() {
                     idx > 0 ? "border-t border-white/20" : ""
                   }`}
                 >
-                  <div className="flex-shrink-0">{icons[profit]}</div>
+                  <div className="shrink-0">{icons[profit]}</div>
                   <p className="text-white text-[13px] font-semibold">
                     {profit}
                   </p>

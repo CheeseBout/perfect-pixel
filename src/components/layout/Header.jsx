@@ -2,11 +2,11 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="p-3 flex justify-center">
+    <div className="flex justify-center md:p-3">
       <img
         src="./icons/page-title.avif"
         alt="page title"
-        className=""
+        className="md:w-[160px]"
       />
     </div>
   );

@@ -38,7 +38,7 @@ function ProductFeatures() {
   ];
   
   return (
-    <div className="w-full max-w-[588px] mx-auto">
+    <div className="w-full max-w-147 mx-auto">
       {featureList.map((feature, index) => (
         <div
           key={index}
@@ -58,7 +58,7 @@ function ProductFeatures() {
           
           {/* Text - Flexible width */}
           <div className="flex-1">
-            <p className="text-base leading-[1.5] text-[#1a202c]">
+            <p className="text-base leading-normal text-[#1a202c]">
               {feature.title}
             </p>
           </div>
