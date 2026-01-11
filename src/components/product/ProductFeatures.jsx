@@ -38,14 +38,14 @@ function ProductFeatures() {
   ];
   
   return (
-    <div className="w-full max-w-147 mx-auto">
+    <div className="w-full max-w-147 mx-auto px-4 md:px-0">
       {featureList.map((feature, index) => (
         <div
           key={index}
-          className="flex flex-row items-center min-h-[52.36px] mb-4"
+          className="flex flex-row items-center gap-3 md:gap-6 mb-3 md:mb-4"
         >
-          {/* Icon - Fixed dimensions, no shrinking */}
-          <div className="w-[52.36px] h-[52.36px] shrink-0">
+          {/* Icon - Responsive dimensions */}
+          <div className="w-10 h-10 md:w-[52.36px] md:h-[52.36px] shrink-0">
             <img 
               src={feature.icons} 
               alt="" 
@@ -53,12 +53,9 @@ function ProductFeatures() {
             />
           </div>
           
-          {/* Gap between icon and text */}
-          <div className="w-6" />
-          
-          {/* Text - Flexible width */}
+          {/* Text - Flexible width with responsive font size */}
           <div className="flex-1">
-            <p className="text-base leading-normal text-[#1a202c]">
+            <p className="text-sm md:text-base leading-normal text-[#1a202c]">
               {feature.title}
             </p>
           </div>
