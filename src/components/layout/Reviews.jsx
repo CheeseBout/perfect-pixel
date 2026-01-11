@@ -101,7 +101,7 @@ function Reviews() {
             </p>
 
             {/* Section Title */}
-            <h3 className="font-[Lora] md:text-[24px] text-center text-[#000000] md:mb-8">
+            <h3 className="font-[Trirong] md:text-[24px] text-center text-[#000000] md:mb-8">
               Customer Reviews
             </h3>
           </div>
@@ -210,7 +210,7 @@ function Reviews() {
 
               {/* Right Column - CTA Button */}
               <div className="flex items-center justify-center pt-8 md:pt-0 md:pl-8">
-                <button className="bg-[#FA8072] text-white font-[Nunito] font-bold text-[16px] px-8 py-3 rounded hover:bg-[#F87171] transition-colors">
+                <button className="bg-[#FA8072] text-white font-[Nunito] font-extrabold text-[16px] px-10 py-2 rounded hover:bg-[#F87171] transition-colors">
                   Write a review
                 </button>
               </div>

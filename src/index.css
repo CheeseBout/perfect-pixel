@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: montserrat, sans-serif;
+  font-family: montserrat, sans-serif, trirong;
   --page-width: 1240px;
   --color-bg: #F4EFE6;
 } 
