@@ -50,8 +50,8 @@ function ProductCliniciansChoice() {
         <div className="flex-1">
           {/* Line 1 & 2 */}
           <p className="lg:text-[13px] text-[#1a1a1a] leading-normal mb-2">
-            <span className="font-bold">336 clinicians</span>{" "}
-            <span className="font-normal">share this on</span>{" "}
+            <span className="font-bold">339 clinicians</span>
+            <span className="font-normal">share this on</span>
             <span className="italic">FrontrowMD</span>
             <br />
             <span className="font-normal">without compensation. </span>

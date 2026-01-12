@@ -10,20 +10,27 @@ function ProductDetail() {
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4">
       {/* Left Column - Images (first on mobile, left on desktop) */}
-      <div className="order-1 md:order-1 md:col-auto md:w-147 mx-auto">
+      <div className="order-1 md:order-1 md:col-auto md:w-147 mx-auto ">
         <ProductImages />
       </div>
 
       {/* Right Column - Product Info */}
-      <div className="order-2 md:order-2 md:col-auto md:w-147">
-        {/* Rating - Hidden on mobile, shown on desktop */}
-        <div className="hidden md:flex gap-4 items-center">
-          <img src="icons/rating.png" alt="rating" className="md:w-25 md:h-4"/>
-          <p>4.8/5 Excellent | Based on 2381 Reviews</p>
+      <div className="order-2 md:order-2 md:col-auto md:w-147 md:mx-6">
+        {/* Rating */}
+        <div className=" md:flex gap-4 items-center">
+          <img
+            src="icons/rating.png"
+            alt="rating"
+            className="md:w-[100px] md:h-4"
+          />
+
+          <p className="font-[Nunito] text-[16px] font-normal tracking-[0.6px] leading-[20.8px]">
+            4.8/5 Excellent | Based on 2381 Reviews
+          </p>
         </div>
 
-        {/* Title - Hidden on mobile, shown on desktop */}
-        <h1 className="hidden md:block font-[Lora] md:text-[28px] font-normal md:my-4">
+        {/* Title */}
+        <h1 className="hidden md:block font-[Lora] md:text-[28px] font-normal md:my-4 tracking-[0.6px] leading-[39.2px] wrap-break-words">
           New Maximum Potency Formula - Lymphatic Drainage Capsules by
           Sculptique™
         </h1>
@@ -38,7 +45,7 @@ function ProductDetail() {
       {/* Mobile-only: Rating and Title shown after images */}
       <div className="order-3 md:hidden px-4 mt-4">
         <div className="flex gap-2 items-center mb-2">
-          <img src="icons/rating.png" alt="rating" className="h-3"/>
+          <img src="icons/rating.png" alt="rating" className="h-3" />
           <p className="text-xs">4.8/5 Excellent | Based on 2381 Reviews</p>
         </div>
         <h1 className="font-[Lora] text-xl font-normal">

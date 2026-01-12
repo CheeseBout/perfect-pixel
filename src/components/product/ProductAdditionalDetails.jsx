@@ -59,11 +59,11 @@ function ProductAdditionalDetails() {
   };
 
   return (
-    <div className="flex flex-col gap-4 max-w-3xl mx-auto w-full">
+    <div className="flex flex-col gap-4 max-w-3xl mx-auto w-full md:mt-4 md:mb-8">
       {accordionItems.map((item, index) => (
         <div
           key={index}
-          className={`rounded-[50px] bg-white px-8 py-5 transition-all duration-300 ${
+          className={`rounded-[50px] bg-white px-4 py-5 transition-all duration-300 ${
             expandedIndex === index
               ? "border border-[#10B981]"
               : "border border-[#E5E7EB]"

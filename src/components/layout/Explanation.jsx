@@ -93,17 +93,18 @@ function Explanation() {
         </p>
       </div>
 
-      {/* Examples */}
+      {/* Examples - MODIFIED SECTION */}
       <div className="bg-white pt-12 px-6">
         <div className="max-w-310 mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
             {examples.map((example, index) => (
               <div
                 key={index}
-                className="rounded-lg overflow-hidden bg-[rgba(0,0,0,0.05)]"
+                // Modified: flex layout on mobile, column on desktop
+                className="rounded-lg overflow-hidden bg-[rgba(0,0,0,0.05)] flex md:flex-col items-center md:items-start"
               >
-                {/* Image Section */}
-                <div className="w-full aspect-auto">
+                {/* Image Section - Fixed width on mobile, full width on desktop */}
+                <div className="w-[145px] h-[145px] shrink-0 md:w-full md:h-auto md:aspect-auto">
                   <img
                     src={example.image}
                     alt={`Example ${index + 1}`}
@@ -111,8 +112,8 @@ function Explanation() {
                   />
                 </div>
 
-                {/* Text Section */}
-                <div className="p-4 md:pb-10">
+                {/* Text Section - Fixed width on mobile (per request), centered vertically */}
+                <div className="w-[145px] p-2 flex items-center justify-center md:w-full md:block md:p-4 md:pb-10">
                   <p className="font-[Nunito] text-[16px] md:text-[16px] text-[#333333] text-center leading-normal">
                     {example.description}
                   </p>
@@ -124,24 +125,45 @@ function Explanation() {
       </div>
 
       <div className="flex flex-col items-center">
+        {/* Desktop Only */}
         <img
           src="https://trysculptique.com/cdn/shop/files/Group_7207.png?v=1760690771"
           alt="no one knows"
-          className="md:w-[80%]"
+          className="hidden md:block md:w-[80%]"
         />
+
+        {/* Mobile Only */}
+        <img
+          src="https://trysculptique.com/cdn/shop/files/Frame_1000003583.png?v=1760690769"
+          alt="no one knows"
+          className="block md:hidden w-full"
+        />
+
         <img
           src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
           alt="arrow"
+          className="my-4" // Added some vertical spacing for the arrow
         />
-        <h2 className="font-[Lora] font-normal md:text-[32px] md:py-4">
+
+        <h2 className="font-[Lora] font-normal text-[24px] md:text-[32px] py-4 text-center">
           The Connection{" "}
           <span className="text-[#039869]">You've Been Missing</span>
         </h2>
+
+        {/* Desktop Only */}
         <img
           src="https://trysculptique.com/cdn/shop/files/Frame_1000003590.png?v=1760690771"
-          alt="missing connections"
-          className="md:w-[68.7%]"
+          alt="missing"
+          className="hidden md:block md:w-[68.7%]"
         />
+
+        {/* Mobile Only */}
+        <img
+          src="https://trysculptique.com/cdn/shop/files/Frame_1000003590_1.png?v=1760690770"
+          alt="missing"
+          className="block md:hidden w-full"
+        />
+
         <img
           src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
           alt="arrow"
@@ -151,12 +173,12 @@ function Explanation() {
         </h2>
 
         {/* Chart */}
-        <div>
-          <div className="flex font-[Nunito] gap-25 justify-center">
-            <div className="md:w-142.5 md:px-2">
+        <div className="px-4 md:px-0">
+          <div className="flex flex-col-reverse md:flex-row font-[Nunito] gap-8 md:gap-25 justify-center items-center md:items-start">
+            <div className="w-full md:w-142.5 md:px-2">
               <p className="md:text-[18px]">
                 Your lymphatic system is your body's internal cleaning crew—a
-                network of vessels that processes{" "}
+                network of vessels that processes
                 <strong>
                   3-4 liters of cellular waste and excess fluid every single
                   day.
@@ -172,15 +194,15 @@ function Explanation() {
                     <img
                       src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/check-mark_17013456_2.png?v=1760698419"
                       alt="tick"
-                      className="w-5 h-auto md:mr-3"
+                      className="w-5 h-auto mr-2 md:mr-3"
                     />
-                    <span className="font-semibold md:text-[18px]">
+                    <span className="font-semibold text-[16px] md:text-[18px]">
                       {tick.description}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="font-[Nunito] md:text-[18px] md:p-4 md:my-6 bg-[#ffe3e2] rounded-lg">
+              <p className="font-[Nunito] text-[16px] md:text-[18px] p-4 my-4 md:my-6 bg-[#ffe3e2] rounded-lg">
                 But after age 35, declining estrogen hijacks this system's
                 ability to function.
               </p>
@@ -193,9 +215,9 @@ function Explanation() {
                     <img
                       src="https://trysculptique.com/cdn/shop/files/Vector_7.png?v=1760702839"
                       alt="cross"
-                      className="w-5 h-auto md:mr-3"
+                      className="w-5 h-auto mr-2 md:mr-3"
                     />
-                    <span className="font-semibold md:text-[18px]">
+                    <span className="font-semibold text-[16px] md:text-[18px]">
                       {item.description}
                     </span>
                   </li>
@@ -216,54 +238,61 @@ function Explanation() {
           </div>
 
           {/* Diagram */}
-          <div className="flex md:py-14 gap-25">
-            <div>
-              <img
-                src="https://trysculptique.com/cdn/shop/files/ChatGPT_Image_Oct_10_2025_at_03_26_38_PM_2.png?v=1760702096"
-                alt="diagram"
-                className="w-142.5"
-              />
-            </div>
-            <div className="font-[Nunito] md:text-[18px] md:w-142.5 md:px-2">
-              <strong className="md:my-2">
-                And it accumulates. Day after day. Week after week.
-              </strong>
-              <p>
-                That gallon of fluid your body should be draining every 24
-                hours? It's pooling in your stomach, your legs, your
-                face—anywhere gravity and tissue structure allow it to settle.
-              </p>
-              <div className="bg-[#ffe3e2] md:my-6 md:px-4 md:py-2 rounded-lg">
-                <p>
-                  The metabolic waste your cells produce overnight? It's still
-                  sitting there at noon. At dinner. While you're trying to fall
-                  asleep.
-                </p>
-                <ul>
-                  {diagramCross.map((item, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-[rgb(166,0,3)] my-2"
-                    >
-                      <img
-                        src="https://trysculptique.com/cdn/shop/files/Vector_7.png?v=1760702839"
-                        alt="cross"
-                        className="w-5 h-auto md:mr-3"
-                      />
-                      <span>{item.description}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="px-4 md:px-0">
+            <div className="flex flex-col md:flex-row md:py-14 gap-8 md:gap-25 items-center md:items-start">
+              <div className="w-full md:w-auto flex justify-center">
+                <img
+                  src="https://trysculptique.com/cdn/shop/files/ChatGPT_Image_Oct_10_2025_at_03_26_38_PM_2.png?v=1760702096"
+                  alt="diagram"
+                  className="w-full max-w-[350px] md:w-142.5 md:max-w-none h-auto"
+                />
               </div>
-              <strong className="md:my-2">
-                Your cells are literally sitting in their own waste—and your
-                body can't flush it out.
-              </strong>
-              <p className="md:my-2">
-                The longer this goes on, the worse it gets. More congestion.
-                More inflammation. More pressure on an already compromised
-                system.
-              </p>
+
+              <div className="font-[Nunito] w-full md:w-142.5 md:px-2">
+                <strong className="block mb-2 md:my-2 md:text-[18px]">
+                  And it accumulates. Day after day. Week after week.
+                </strong>
+                <p className="md:text-[18px]">
+                  That gallon of fluid your body should be draining every 24
+                  hours? It's pooling in your stomach, your legs, your
+                  face—anywhere gravity and tissue structure allow it to settle.
+                </p>
+
+                <div className="bg-[#ffe3e2] p-4 my-4 md:my-6 md:px-4 md:py-2 rounded-lg">
+                  <p className="md:text-[18px]">
+                    The metabolic waste your cells produce overnight? It's still
+                    sitting there at noon. At dinner. While you're trying to
+                    fall asleep.
+                  </p>
+                  <ul>
+                    {diagramCross.map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center text-[rgb(166,0,3)] my-2"
+                      >
+                        <img
+                          src="https://trysculptique.com/cdn/shop/files/Vector_7.png?v=1760702839"
+                          alt="cross"
+                          className="w-5 h-auto mr-2 md:mr-3"
+                        />
+                        <span className="font-semibold text-[16px] md:text-[18px]">
+                          {item.description}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <strong className="block mb-2 md:my-2 md:text-[18px]">
+                  Your cells are literally sitting in their own waste—and your
+                  body can't flush it out.
+                </strong>
+                <p className="md:text-[18px] md:my-2">
+                  The longer this goes on, the worse it gets. More congestion.
+                  More inflammation. More pressure on an already compromised
+                  system.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -311,13 +340,19 @@ function Explanation() {
               ))}
             </div>
           </div>
-
           {/* Missing Piece */}
           <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-(--color-bg) md:pb-17.5 md:mb-8.75">
+            {/* Desktop Only */}
             <img
               src="https://trysculptique.com/cdn/shop/files/Group_7207_1.png?v=1760694176"
               alt="missing piece"
-              className="w-[60%] mx-auto md:mb-6"
+              className="hidden md:block md:w-[68.7%] mx-auto"
+            />
+            {/* Mobile Only */}
+            <img
+              src="https://trysculptique.com/cdn/shop/files/Frame_1000003583_1.png?v=1760694176"
+              alt="missing piece"
+              className="block md:hidden w-full"
             />
             <CheckoutButton />
           </div>

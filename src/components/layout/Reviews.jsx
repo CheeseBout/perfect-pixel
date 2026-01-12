@@ -91,7 +91,7 @@ function Reviews() {
 
           <div className="flex flex-col justify-center items-center">
             {/* Main Headline */}
-            <h2 className="font-[Lora] text-center text-[#000000] md:my-4 md:text-2xl md:max-w-200">
+            <h2 className="font-[Lora] text-center text-[#000000] text-[24px] md:my-4 md:text-2xl md:max-w-200">
               Real Women, Real Results: 93,000+ Transformations
             </h2>
 
