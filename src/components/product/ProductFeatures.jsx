@@ -36,26 +36,26 @@ function ProductFeatures() {
         "https://trysculptique.com/cdn/shop/files/ecology_18588873_1_dad420da-2490-4e30-828a-28b366974307.png?v=1758713413",
     },
   ];
-  
+
   return (
     <div className="w-full max-w-147 mx-auto px-4 md:px-0">
       {featureList.map((feature, index) => (
         <div
           key={index}
-          className="flex flex-row items-center gap-3 md:gap-6 mb-3 md:mb-4"
+          className="flex flex-row items-center gap-2 md:gap-6 mb-3 md:mb-4"
         >
           {/* Icon - Responsive dimensions */}
-          <div className="w-10 h-10 md:w-[52.36px] md:h-[52.36px] shrink-0">
-            <img 
-              src={feature.icons} 
-              alt="" 
+          <div className="w-[10%] h-[10%] md:w-[52.36px] md:h-[52.36px] shrink-0">
+            <img
+              src={feature.icons}
+              alt="feature icon"
               className="w-full h-full object-contain"
             />
           </div>
-          
-          {/* Text - Flexible width with responsive font size */}
+
+          {/* Text */}
           <div className="flex-1">
-            <p className="text-sm md:text-base leading-normal text-[#1a202c]">
+            <p className="font-[Nunito] text-[16px] font-normal leading-[20.8px] tracking-[0.6px] text-black">
               {feature.title}
             </p>
           </div>

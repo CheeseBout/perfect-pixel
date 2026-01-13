@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 function ProductAdditionalDetails() {
   const [expandedIndex, setExpandedIndex] = useState(1); // Middle item expanded by default
@@ -9,10 +9,10 @@ function ProductAdditionalDetails() {
       title: "Ingredients proven by science",
       content: (
         <div>
-          <p className="mb-3">
+          <p className="mb-4 font-['Montserrat'] text-[15px] leading-[27px] text-black/75">
             <strong>Sculptique Ingredients:</strong>
           </p>
-          <ul className="space-y-2 list-disc list-inside">
+          <ul className="list-disc pl-[40px] font-['Montserrat'] text-[15px] leading-[27px] text-black/75 space-y-0 my-[15px]">
             <li>
               <strong>Echinacea purpurea Extract</strong> – Known for its anti-inflammatory properties, it may support skin health.
             </li>
@@ -38,7 +38,7 @@ function ProductAdditionalDetails() {
               <strong>Kelp Extract</strong> – A source of iodine and minerals that may support skin metabolism.
             </li>
           </ul>
-          <p className="mt-3">
+          <p className="mt-4 font-['Montserrat'] text-[15px] leading-[27px] text-black/75">
             These natural ingredients work together to reduce puffiness, bloating, fluid retention.
           </p>
         </div>
@@ -59,11 +59,11 @@ function ProductAdditionalDetails() {
   };
 
   return (
-    <div className="flex flex-col gap-4 max-w-3xl mx-auto w-full md:mt-4 md:mb-8">
+    <div className="flex flex-col gap-4 max-w-3xl px-2 md:mx-auto w-full mt-4 mb-8">
       {accordionItems.map((item, index) => (
         <div
           key={index}
-          className={`rounded-[50px] bg-white px-4 py-5 transition-all duration-300 ${
+          className={`rounded-[25px] bg-white p-4 transition-all duration-300 ${
             expandedIndex === index
               ? "border border-[#10B981]"
               : "border border-[#E5E7EB]"
@@ -74,7 +74,7 @@ function ProductAdditionalDetails() {
             className="flex justify-between items-start cursor-pointer"
             onClick={() => toggleAccordion(index)}
           >
-            <p className="text-[#111827] text-base font-medium pr-4 flex-1">
+            <p className="font-['Montserrat'] text-[#111827] text-base font-medium pr-4 flex-1">
               {item.title}
             </p>
 
@@ -112,7 +112,7 @@ function ProductAdditionalDetails() {
             </div>
           </div>
 
-          {/* Content Row (Expanded) with smooth animation */}
+          {/* Content Row (Expanded) */}
           <div
             ref={(el) => (contentRefs.current[index] = el)}
             className="overflow-hidden transition-all duration-300 ease-in-out"
@@ -123,15 +123,14 @@ function ProductAdditionalDetails() {
               opacity: expandedIndex === index ? 1 : 0
             }}
           >
-            <div className="mt-4 pr-10">
+            <div className="mt-4 pr-4 md:pr-10">
               {typeof item.content === 'string' ? (
-                <p className="text-[#111827] text-[15px] leading-relaxed">
+                <p className="font-['Montserrat'] text-[15px] leading-[27px] text-black/75">
                   {item.content}
                 </p>
               ) : (
-                <div className="text-[#111827] text-[15px] leading-relaxed">
-                  {item.content}
-                </div>
+                // For complex content (like the list), styles are handled inside the object
+                item.content
               )}
             </div>
           </div>

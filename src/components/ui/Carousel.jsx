@@ -24,7 +24,6 @@ function Carousel() {
     },
   ];
 
-  // Increased duplication to 6x to ensure it fills wide screens without gaps
   const duplicatedBanner = [
     ...banner,
     ...banner,
@@ -36,15 +35,14 @@ function Carousel() {
 
   return (
     <div className="bg-[#F4F1E8] py-5 overflow-hidden w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      {/* Header Container - Kept Centered */}
+      {/* Header Container */}
       <div className="max-w-300 mx-auto px-4">
-        <h2 className="font-[Georgia] text-[20px] text-center text-[#111111] mb-4">
+        <h2 className="font-[Trirong] text-[18px] md:text-[24px] text-center text-[#111111] mb-4">
           As Seen In
         </h2>
       </div>
 
-      {/* Carousel Track - Full Width */}
-      {/* We added w-max to ensure the div stretches to fit all children exactly */}
+      {/* Carousel Track */}
       <div className="relative w-full">
         <div className="flex w-max animate-scroll">
           {duplicatedBanner.map((item, index) => (
@@ -55,7 +53,7 @@ function Carousel() {
               <img
                 src={item.url}
                 alt={item.alt}
-                className="h-7 w-auto object-contain"
+                className="h-5 md:h-7 w-auto object-contain"
                 style={{
                   filter: "brightness(0)",
                 }}

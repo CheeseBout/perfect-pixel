@@ -73,15 +73,14 @@ function FAQ() {
   };
 
   return (
-    <div className="py-16 px-6">
-      <div className="lg:w-[65%] mx-auto">
+    <div className="py-16 px-4">
+      <div className="md:w-[65%] mx-auto">
         <h2 className="font-[Lora] text-[32px] md:text-[36px] text-center text-[#111111] mb-12 md:mb-14">
           Frequently Asked Questions
         </h2>
         <div
-          className="space-y-0 bg-linear-to-b from-white to-[#F4EFE6] rounded-2xl
-          lg:px-8
-        "
+          className="space-y-0 bg-linear-to-b from-white to-[#F4EFE6] rounded-2xl font-[Nunito]
+          md:px-8"
         >
           {list.map((item, index) => (
             <div
@@ -90,15 +89,10 @@ function FAQ() {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full py-5 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
+                className="w-full py-5 px-2 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
                 aria-expanded={openIndex === index}
               >
-                <p
-                  className="text-[#111111] font-normal 
-                pr-4
-                text-[16px] md:text-[18px] 
-                "
-                >
+                <p className="text-[#111111] font-normal pr-4 text-[18px]">
                   {item.question}
                 </p>
                 <svg
@@ -119,11 +113,11 @@ function FAQ() {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="pb-5 pt-2 space-y-4">
+                <div className="pb-5 pt-2 px-2 space-y-4">
                   {item.answer.map((ans, idx) => (
                     <p
                       key={idx}
-                      className="text-[14px] md:text-[16px] text-[#333333] leading-relaxed"
+                      className="font-[Nunito] text-[16px] text-[#333333] leading-relaxed"
                     >
                       {ans}
                     </p>

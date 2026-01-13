@@ -79,32 +79,31 @@ function Explanation() {
   return (
     <div>
       {/* Question */}
-      <div className="flex flex-col items-center md:max-w-[50%] mx-auto text-center md:pt-14">
-        <h2 className="font-[Lora] font-normal text-[32px]">
-          Why Your
+      <div className="flex flex-col items-center max-w-[800px] mx-auto text-center my-4 md:mt-18">
+        <h2 className="font-[Lora] font-normal mx-4 text-[24px] md:text-[32px] leading-[31.2px] md:leading-[41.6px] tracking-[0.6px] text-black wrap-break-word">
+          Why Your{" "}
           <span className="text-[#039869]">
             Bloating, Brain Fog & Swollen Legs
-          </span>
+          </span>{" "}
           Are Actually Connected
         </h2>
-        <p className="text-[18px] font-[Nunito]">
+        <p className="w-[90%] md:w-[800px] md:mx-auto my-4 text-center font-['Nunito'] text-[16px] md:text-[18px] font-normal leading-[23.4px] tracking-[0.6px] text-black">
           If you're experiencing more than one of these symptoms, your body is
           trying to tell you something:
         </p>
       </div>
 
-      {/* Examples - MODIFIED SECTION */}
-      <div className="bg-white pt-12 px-6">
+      {/* Examples */}
+      <div className="bg-white md:pt-12 px-2 pb-8">
         <div className="max-w-310 mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
             {examples.map((example, index) => (
               <div
                 key={index}
-                // Modified: flex layout on mobile, column on desktop
                 className="rounded-lg overflow-hidden bg-[rgba(0,0,0,0.05)] flex md:flex-col items-center md:items-start"
               >
-                {/* Image Section - Fixed width on mobile, full width on desktop */}
-                <div className="w-[145px] h-[145px] shrink-0 md:w-full md:h-auto md:aspect-auto">
+                {/* Image Section */}
+                <div className="w-[145px] h-[150px] shrink-0 md:w-full md:h-auto md:aspect-auto">
                   <img
                     src={example.image}
                     alt={`Example ${index + 1}`}
@@ -112,9 +111,9 @@ function Explanation() {
                   />
                 </div>
 
-                {/* Text Section - Fixed width on mobile (per request), centered vertically */}
+                {/* Text Section */}
                 <div className="w-[145px] p-2 flex items-center justify-center md:w-full md:block md:p-4 md:pb-10">
-                  <p className="font-[Nunito] text-[16px] md:text-[16px] text-[#333333] text-center leading-normal">
+                  <p className="font-[Nunito] text-[16px] md:text-[16px] text-[#333333] text-center leading-[20.8px]">
                     {example.description}
                   </p>
                 </div>
@@ -136,16 +135,16 @@ function Explanation() {
         <img
           src="https://trysculptique.com/cdn/shop/files/Frame_1000003583.png?v=1760690769"
           alt="no one knows"
-          className="block md:hidden w-full"
+          className="block md:hidden w-[90%] mx-auto"
         />
 
         <img
           src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
           alt="arrow"
-          className="my-4" // Added some vertical spacing for the arrow
+          className="mt-4 w-[10%] md:w-[48px]"
         />
 
-        <h2 className="font-[Lora] font-normal text-[24px] md:text-[32px] py-4 text-center">
+        <h2 className="w-[99%] mx-auto font-[Lora] font-normal text-[24px] md:text-[32px] py-4 text-center">
           The Connection{" "}
           <span className="text-[#039869]">You've Been Missing</span>
         </h2>
@@ -161,19 +160,20 @@ function Explanation() {
         <img
           src="https://trysculptique.com/cdn/shop/files/Frame_1000003590_1.png?v=1760690770"
           alt="missing"
-          className="block md:hidden w-full"
+          className="block md:hidden w-[90%] mx-auto"
         />
 
         <img
           src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
           alt="arrow"
+          className="md:w-[48px] w-[10%] md:mt-6"
         />
-        <h2 className="font-[Lora] font-normal md:text-[32px] md:py-4">
-          Your <span className="text-[#039869]">Hidden Drainage System</span>
+        <h2 className="w-[290px] md:w-full mx-auto font-['Lora'] text-[24px] md:text-[32px] font-normal text-center my-4 leading-[31.2px] tracking-[0.6px] break-words text-black">
+          Your <span className="text-[#039869]">Hidden</span> Drainage System
         </h2>
 
         {/* Chart */}
-        <div className="px-4 md:px-0">
+        <div className="px-4 md:px-0 md:mt-8">
           <div className="flex flex-col-reverse md:flex-row font-[Nunito] gap-8 md:gap-25 justify-center items-center md:items-start">
             <div className="w-full md:w-142.5 md:px-2">
               <p className="md:text-[18px]">
@@ -184,7 +184,9 @@ function Explanation() {
                   day.
                 </strong>
               </p>
-              <p>When it's working properly, you don't even know it exists.</p>
+              <p className="my-1">
+                When it's working properly, you don't even know it exists.
+              </p>
               <ul>
                 {chartTicks.map((tick, index) => (
                   <li
@@ -223,7 +225,7 @@ function Explanation() {
                   </li>
                 ))}
               </ul>
-              <p className="font-[Nunito] md:text-[18px] md:my-2">
+              <p className="font-[Nunito] md:text-[18px] my-2">
                 Instead of processing and removing waste, it backs up in your
                 tissues.
               </p>
@@ -238,7 +240,7 @@ function Explanation() {
           </div>
 
           {/* Diagram */}
-          <div className="px-4 md:px-0">
+          <div className="">
             <div className="flex flex-col md:flex-row md:py-14 gap-8 md:gap-25 items-center md:items-start">
               <div className="w-full md:w-auto flex justify-center">
                 <img
@@ -258,8 +260,8 @@ function Explanation() {
                   face—anywhere gravity and tissue structure allow it to settle.
                 </p>
 
-                <div className="bg-[#ffe3e2] p-4 my-4 md:my-6 md:px-4 md:py-2 rounded-lg">
-                  <p className="md:text-[18px]">
+                <div className="bg-[#ffe3e2] p-4 my-4 md:my-6 md:px-4 md:py-2 rounded-lg inline-block">
+                  <p className="w-[258px] md:w-full font-['Nunito'] text-[16px] leading-[20.8px] tracking-[0.5px] text-black  my-2">
                     The metabolic waste your cells produce overnight? It's still
                     sitting there at noon. At dinner. While you're trying to
                     fall asleep.
@@ -283,11 +285,11 @@ function Explanation() {
                   </ul>
                 </div>
 
-                <strong className="block mb-2 md:my-2 md:text-[18px]">
+                <strong className="text-[16px] leading-[20.8px] tracking-[0.5px] my-2 text-black font-bold">
                   Your cells are literally sitting in their own waste—and your
                   body can't flush it out.
                 </strong>
-                <p className="md:text-[18px] md:my-2">
+                <p className="md:text-[18px] my-2">
                   The longer this goes on, the worse it gets. More congestion.
                   More inflammation. More pressure on an already compromised
                   system.
@@ -298,8 +300,8 @@ function Explanation() {
 
           {/* Nothing Worked */}
           <div className="bg-(--color-bg) w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            <h2 className="font-[Lora] font-normal md:text-[32px] text-center md:mb-8">
-              Why <span className="text-[#039869]">Nothing Worked</span>
+            <h2 className="w-[290px] md:w-full mx-auto font-['Lora'] font-normal text-[24px] md:text-[32px] text-center my-4 leading-[31.2px] tracking-[0.6px] break-words text-black md:mb-8">
+              Why Nothing Has <span className="text-[#039869]">Worked</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-310 mx-auto px-6">
               {nothingWorked.map((item, index) => (
@@ -321,7 +323,7 @@ function Explanation() {
                   {/* Why it failed label */}
                   <div className="bg-[#ffe3e2] m-4 flex-1 flex flex-col font-bold px-5 ">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="font-[Nunito] text-[16px] md:pt-2">
+                      <span className="font-[Nunito] text-[16px] pt-2">
                         Why it failed
                       </span>
                       <img
@@ -341,20 +343,22 @@ function Explanation() {
             </div>
           </div>
           {/* Missing Piece */}
-          <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-(--color-bg) md:pb-17.5 md:mb-8.75">
+          <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-(--color-bg) py-6 md:pb-17.5 md:mb-8.75 ">
             {/* Desktop Only */}
             <img
               src="https://trysculptique.com/cdn/shop/files/Group_7207_1.png?v=1760694176"
               alt="missing piece"
-              className="hidden md:block md:w-[68.7%] mx-auto"
+              className="hidden md:block md:w-[920px] mx-auto"
             />
             {/* Mobile Only */}
             <img
               src="https://trysculptique.com/cdn/shop/files/Frame_1000003583_1.png?v=1760694176"
               alt="missing piece"
-              className="block md:hidden w-full"
+              className="block md:hidden w-[85%] mx-auto"
             />
-            <CheckoutButton />
+            <div className="w-[96%] mx-auto my-4 md:mt-5">
+              <CheckoutButton />
+            </div>
           </div>
         </div>
       </div>

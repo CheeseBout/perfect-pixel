@@ -5,7 +5,7 @@ function ProductCliniciansChoice() {
     <div className="bg-white lg:pt-2 lg:pl-2 lg:pb-2.5 max-w-100">
       <div className="flex items-center gap-2 relative">
         {/* Left Element: Clinicians' Choice Badge */}
-        <div className="shrink-0 relative">
+        <div className="shrink-0 relative mx-2">
           {/* Left Laurel */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,9 +49,9 @@ function ProductCliniciansChoice() {
         {/* Middle Element: Informational Text */}
         <div className="flex-1">
           {/* Line 1 & 2 */}
-          <p className="lg:text-[13px] text-[#1a1a1a] leading-normal mb-2">
+          <p className="text-[13px] text-[#1a1a1a] leading-normal mb-2">
             <span className="font-bold">339 clinicians</span>
-            <span className="font-normal">share this on</span>
+            <span className="font-normal">share this on </span>
             <span className="italic">FrontrowMD</span>
             <br />
             <span className="font-normal">without compensation. </span>

@@ -91,26 +91,26 @@ function Reviews() {
 
           <div className="flex flex-col justify-center items-center">
             {/* Main Headline */}
-            <h2 className="font-[Lora] text-center text-[#000000] text-[24px] md:my-4 md:text-2xl md:max-w-200">
+            <h2 className="font-['Lora'] text-center text-black mt-4 text-[24px] md:text-[32px] leading-[41.6px] tracking-[0.6px] break-words w-full max-w-[800px]">
               Real Women, Real Results: 93,000+ Transformations
             </h2>
 
             {/* Sub-headline */}
-            <p className="font-[Nunito] md:text-[18px] text-center text-[#555555] md:my-4">
+            <p className="w-full max-w-[800px] mx-auto my-4 text-center font-['Nunito'] text-[18px] font-normal leading-[23.4px] tracking-[0.6px] text-black">
               All reviews verified from actual paying customers
             </p>
 
             {/* Section Title */}
-            <h3 className="font-[Trirong] md:text-[24px] text-center text-[#000000] md:mb-8">
+            <h3 className="font-[Trirong] text-[22.5px] md:text-[24px] text-center text-[#000000] md:my-2">
               Customer Reviews
             </h3>
           </div>
 
           {/* Review Dashboard */}
-          <div className="border border-[#E5E5E5] rounded-lg md:py-6 md:px-4">
+          <div className="md:py-6 md:px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-[#E5E5E5]">
               {/* Left Column - Aggregate Score */}
-              <div className="flex flex-col items-center justify-center pb-8 md:pb-0">
+              <div className="flex flex-col items-center md:items-start justify-center">
                 {/* Stars and Score - Same Row */}
                 <div className="flex items-center gap-3 mb-3">
                   {/* Stars */}
@@ -150,14 +150,12 @@ function Reviews() {
                   </div>
 
                   {/* Score */}
-                  <p className="text-[24px] text-[#333333] font-bold">
-                    4.67 out of 5
-                  </p>
+                  <p>4.67 out of 5</p>
                 </div>
 
                 {/* Review Count */}
                 <div className="flex items-center gap-2">
-                  <p className="text-[14px] text-[#666666]">
+                  <p className="text-[16px] text-[#666666]">
                     Based on 110 reviews
                   </p>
                   <img
@@ -169,14 +167,14 @@ function Reviews() {
               </div>
 
               {/* Middle Column - Histogram */}
-              <div className="flex flex-col justify-center px-0 md:px-8 pt-8 md:pt-0">
+              <div className="flex flex-col justify-center items-center md:items-start md:px-8 ">
                 {reviewStats.map((stat) => (
                   <div
                     key={stat.stars}
-                    className="flex items-center gap-3 mb-2"
+                    className="flex flex-col md:flex-row items-center md:gap-3 mb-6 md:mb-1.5 w-full"
                   >
                     {/* Star Rating */}
-                    <div className="flex gap-0.5 w-20">
+                    <div className="flex gap-0.5 w-20 justify-center md:justify-start">
                       {[...Array(5)].map((_, i) => (
                         <svg
                           key={i}
@@ -193,24 +191,29 @@ function Reviews() {
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="flex-1 bg-[#F3F4F6] h-2 rounded-full overflow-hidden">
+                    <div className="inline-block w-[200px] h-[14px] my-2 md:my-0 md:mx-6 bg-[rgba(224,224,224,0.5)] align-middle cursor-pointer overflow-hidden">
                       <div
-                        className="bg-[#F87171] h-full rounded-full"
+                        className="bg-[#F87171] h-full"
                         style={{ width: `${stat.percentage}%` }}
                       />
                     </div>
 
                     {/* Count */}
-                    <span className="font-[Nunito] text-[14px] text-[#333333] w-8 text-right">
+                    <span className="font-[Montserrat] text-[12.8px] text-[#575757] w-8 text-center md:text-left">
                       {stat.count}
                     </span>
                   </div>
                 ))}
+
+                {/* "See all reviews" Mobile Only */}
+                <button className="mt-2 md:mt-4 font-[Montserrat] text-[14px] text-[#F87171] underline decoration-[#F87171] hover:opacity-80 transition-opacity">
+                  See all reviews
+                </button>
               </div>
 
               {/* Right Column - CTA Button */}
-              <div className="flex items-center justify-center pt-8 md:pt-0 md:pl-8">
-                <button className="bg-[#FA8072] text-white font-[Nunito] font-extrabold text-[16px] px-10 py-2 rounded hover:bg-[#F87171] transition-colors">
+              <div className="flex items-center justify-center md:pl-8">
+                <button className="bg-[#FA8A8A] text-white font-['Montserrat'] font-bold text-[16px] leading-[16px] tracking-[0.6px] w-[240px] py-[10px] px-[20px] border-[1.6px] border-[#FA8A8A] rounded-none cursor-pointer transition-colors hover:bg-white hover:text-[#FA8A8A]">
                   Write a review
                 </button>
               </div>
@@ -224,7 +227,7 @@ function Reviews() {
               alt="Diamond Authenticity"
               className="w-20 h-20"
             />
-            <span className="text-[rgb(76,142,218)] md:text-[12px] font-semibold">
+            <span className="text-[rgb(76,142,218)] text-[12px] font-semibold">
               100.0
             </span>
           </div>
@@ -232,7 +235,7 @@ function Reviews() {
       </div>
 
       {/* User's Reviews */}
-      <div className="bg-white py-8 px-4">
+      <div className="bg-white pb-8 md:py-8 px-8 md:px-4">
         <div className="max-w-310 mx-auto">
           {/* Sort Dropdown */}
           <div className="mb-8 flex">
@@ -281,7 +284,7 @@ function Reviews() {
                 <div className="flex items-center gap-2.5 mb-3">
                   {/* Avatar Icon with Verified Badge */}
                   <div className="relative">
-                    <CgUser className="w-6 h-6 text-[#F87C7C]" />
+                    <CgUser className="w-9 h-9 text-[#F87C7C] bg-gray-200" />
                     {/* Verified Checkmark Badge */}
                     <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-[#F87C7C] rounded-sm flex items-center justify-center">
                       <svg
@@ -301,7 +304,7 @@ function Reviews() {
                   </span>
 
                   {/* Verified Tag */}
-                  <span className="bg-[#F87C7C] text-white text-[12px] md:ml-1.25 md:px-2 md:py-0.125 rounded-sm">
+                  <span className="bg-[#F87C7C] text-white text-[12px] md:ml-1.25 px-2 md:py-0.125">
                     Verified
                   </span>
                 </div>
@@ -314,7 +317,7 @@ function Reviews() {
             ))}
           </ul>
           {/* Pagination */}
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center gap-2 my-8">
             {/* Page Numbers */}
             <button className="w-6 h-6 cursor-pointer flex items-center justify-center text-[24px] text-[rgb(123,123,123)] font-bold">
               1
@@ -342,7 +345,7 @@ function Reviews() {
       {/* Offers Section */}
       <div className="bg-[#F4EFE6] py-12 md:py-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <div className="max-w-310 mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 lg:gap-6">
             {offers.map((offer, index) => (
               <div
                 key={index}

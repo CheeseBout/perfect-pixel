@@ -9,7 +9,7 @@ function CheckoutButton() {
           w-full max-w-[400px] 
           bg-black hover:bg-gray-900 
           text-white 
-          font-[Nunito] font-bold text-[20px] 
+          font-[Nunito] font-bold text-[18px] 
           py-4 
           rounded-[5px] 
           transition-colors duration-200 
@@ -27,7 +27,7 @@ function CheckoutButton() {
           alt="60-day money-back guarantee icon" 
           className="w-5 h-5 object-contain"
         />
-        <span className="text-[15px] text-[#1A1A1A] font-[Nunito] font-medium leading-tight">
+        <span className="text-[15px] font-semibold text-[#1A1A1A] font-[Nunito] font-bold leading-tight">
           60-Day Money-Back Guarantee
         </span>
       </div>

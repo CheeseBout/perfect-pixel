@@ -17,41 +17,29 @@ function ProductDetail() {
       {/* Right Column - Product Info */}
       <div className="order-2 md:order-2 md:col-auto md:w-147 md:mx-6">
         {/* Rating */}
-        <div className=" md:flex gap-4 items-center">
+        <div className="flex gap-4 items-center m-4">
           <img
             src="icons/rating.png"
             alt="rating"
-            className="md:w-[100px] md:h-4"
+            className="w-15 md:w-[100px] md:h-4"
           />
 
-          <p className="font-[Nunito] text-[16px] font-normal tracking-[0.6px] leading-[20.8px]">
+          <p className="font-[Nunito] text-[12px] md:text-[16px] font-normal tracking-[0.1px] leading-[15.6px]">
             4.8/5 Excellent | Based on 2381 Reviews
           </p>
         </div>
 
         {/* Title */}
-        <h1 className="hidden md:block font-[Lora] md:text-[28px] font-normal md:my-4 tracking-[0.6px] leading-[39.2px] wrap-break-words">
+        <h1 className="w-[290px] font-['Lora'] text-[24px] md:text-[28px] font-normal m-4 tracking-[0.6px] leading-[33.6px] break-words text-black">
           New Maximum Potency Formula - Lymphatic Drainage Capsules by
           Sculptique™
-        </h1>
+        </h1> 
 
         <ProductFeatures />
         <ProductCliniciansChoice />
         <ProductSelections />
         <ProductReview />
         <ProductAdditionalDetails />
-      </div>
-
-      {/* Mobile-only: Rating and Title shown after images */}
-      <div className="order-3 md:hidden px-4 mt-4">
-        <div className="flex gap-2 items-center mb-2">
-          <img src="icons/rating.png" alt="rating" className="h-3" />
-          <p className="text-xs">4.8/5 Excellent | Based on 2381 Reviews</p>
-        </div>
-        <h1 className="font-[Lora] text-xl font-normal">
-          New Maximum Potency Formula - Lymphatic Drainage Capsules by
-          Sculptique™
-        </h1>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CheckoutButton from "../common/CheckoutButton";
 
 function StoriesVideo() {
@@ -67,7 +67,23 @@ function StoriesVideo() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [playingVideo, setPlayingVideo] = useState(null);
-  const videosPerView = 4;
+  
+  // State to track if we are on mobile
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Effect to detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); 
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Dynamic videosPerView based on screen size
+  const videosPerView = isMobile ? 1 : 4;
   const totalSegments = videos.length - videosPerView + 1;
 
   const handleSegmentClick = (index) => {
@@ -95,9 +111,9 @@ function StoriesVideo() {
 
   return (
     <div className="bg-(--color-bg) py-14 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <div className="max-w-(--page-width) mx-auto px-6">
+      <div className="max-w-(--page-width) mx-auto px-4">
         {/* Trustpilot Image */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 md:max-w-[300px] mx-auto">
           <img
             src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Trustpilot_review_2.png?v=1752485383"
             alt="trustpilot"
@@ -116,7 +132,7 @@ function StoriesVideo() {
             className="flex transition-transform duration-500 ease-in-out"
             style={{
               transform: `translateX(-${
-                currentIndex * (100 / videosPerView + 1)
+                currentIndex * (100 / videosPerView)
               }%)`,
             }}
           >
@@ -124,7 +140,11 @@ function StoriesVideo() {
               <div
                 key={index}
                 className="shrink-0 relative cursor-pointer lg:p-1.25"
-                style={{ width: "294px", height: "522px" }}
+                style={{ 
+                    width: isMobile ? "100%" : "262px", 
+                    height: "522px",
+                    paddingRight: isMobile ? "10px" : "0px" 
+                }}
                 onClick={() => handleVideoClick(index)}
               >
                 {playingVideo === index ? (
@@ -133,7 +153,6 @@ function StoriesVideo() {
                     controls
                     autoPlay
                     className="w-full h-full object-cover rounded-lg justify-around"
-                    style={{ width: "294px", height: "522px"}}
                   >
                     <source src={video.source} type="video/mp4" />
                   </video>
@@ -143,7 +162,6 @@ function StoriesVideo() {
                       playsInline
                       poster={video.poster}
                       className="w-full h-full object-cover rounded-lg"
-                      // style={{ width: "294px", height: "522px" }}
                     >
                       <source src={video.source} type="video/mp4" />
                     </video>
@@ -163,8 +181,9 @@ function StoriesVideo() {
 
         {/* Controls: Indicator Bar and Navigation Buttons */}
         <div className="flex items-center justify-between mb-8">
+          
           {/* Indicator Bar */}
-          <ul className="flex w-260">
+          <ul className="flex w-full md:w-[85%] mr-4 md:mr-0">
             {Array.from({ length: totalSegments }).map((_, index) => (
               <li
                 key={index}
@@ -172,14 +191,14 @@ function StoriesVideo() {
                 className={`h-1 cursor-pointer transition-all duration-300 flex-1 ${
                   index === currentIndex
                     ? "bg-[rgb(3,152,105)]"
-                    : "bg-[rgba(0,0,0,0.5)]"
+                    : "bg-[rgba(0,0,0,0.2)]"
                 }`}
               />
             ))}
           </ul>
 
           {/* Navigation Buttons */}
-          <div className="flex gap-3">
+          <div className="flex gap-1 shrink-0">
             <button
               onClick={handlePrevious}
               disabled={currentIndex === 0}

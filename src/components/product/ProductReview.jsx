@@ -2,7 +2,7 @@ import React from "react";
 
 function ProductReview() {
   return (
-    <div className="w-full max-w-[588px] mt-6 p-3 bg-[#F3EEE0] rounded-xl font-['Montserrat'] text-[16px] font-normal tracking-[0.6px] leading-[28.8px] text-[rgba(0,0,0,0.75)]">
+    <div className="w-[95%] mx-auto md:w-[588px] mt-6 p-3 bg-[#F3EEE0] rounded-xl font-['Montserrat'] text-[16px] font-normal tracking-[0.6px] leading-[28.8px] text-[rgba(0,0,0,0.75)]">
       {/* Header Section */}
       <div className="flex items-start gap-4 mb-3">
         {/* Avatar */}
