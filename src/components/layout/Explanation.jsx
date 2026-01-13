@@ -303,7 +303,7 @@ function Explanation() {
             <h2 className="w-[290px] md:w-full mx-auto font-['Lora'] font-normal text-[24px] md:text-[32px] text-center my-4 leading-[31.2px] tracking-[0.6px] break-words text-black md:mb-8">
               Why Nothing Has <span className="text-[#039869]">Worked</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-310 mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 max-w-310 mx-auto px-6">
               {nothingWorked.map((item, index) => (
                 <div key={index} className="flex flex-col bg-white rounded-lg">
                   {/* Image */}

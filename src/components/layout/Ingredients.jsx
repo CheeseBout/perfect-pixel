@@ -121,7 +121,6 @@ function Ingredients() {
                 </span>
               </div>
 
-              {/* Header Row/Col Wrapper */}
               {/* Mobile: Row (Image Left, Amount Right) */}
               {/* Desktop: Column (Image Top, Amount Bottom) */}
               <div className="flex flex-row md:flex-col items-center w-full gap-2 md:gap-0">
@@ -158,7 +157,6 @@ function Ingredients() {
               </div>
 
               {/* Accordion Content Area */}
-              {/* MOVED OUTSIDE the flex row above. This ensures it takes full width on mobile. */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   openCards.includes(index)
